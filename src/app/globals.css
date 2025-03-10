@@ -89,13 +89,37 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
+@font-face {
+  font-family: "TommySoft-Regular";
+  src: url('/font/tommySoft/madeTommySoftRegularPersonalUse.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TommySoft-Thin";
+  src: url('/font/tommySoft/madeTommySoftThinPersonalUse.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TommySoft-Light";
+  src: url('/font/tommySoft/madeTommySoftLightPersonalUse.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TommySoft-Medium";
+  src: url('/font/tommySoft/madeTommySoftMediumPersonalUse.otf') format('opentype');
+  font-display: swap;
+}
+
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 2px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #010b8f00;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -112,6 +136,7 @@
 @layer base {
   * {
     @apply border-border;
+    /* font-family: "TommySoft-Light"; */
   }
 
   body {

@@ -18,8 +18,8 @@ export default function HomePage() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col justify-center lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
-      <div className="flex items-center justify-center py-12">
+    <div className="w-full h-screen flex flex-col justify-center lg:grid lg:min-h-[600px] lg:grid-cols-2 ">
+      <div className="flex items-center justify-center">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
             <h1 className="text-3xl font-bold">Login</h1>
@@ -68,14 +68,23 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="hidden bg-muted object-contain lg:block">
-        <Image
-          src="/walpapper.jpg"
-          alt="Image"
-          width="1920"
-          height="1080"
-          className="h-full w-full object-cover brightness-[0.40] grayscale"
+      <div className="hidden bg-muted object-contain lg:block relative">
+        <video
+          src="/home/login.mp4"
+          autoPlay
+          loop
+          muted
+          className="h-full w-full object-cover"
         />
+        <div className="absolute bottom-40 flex flex-col text-white p-8 gap-5">
+          <h2 className="text-4xl font-bold">A Verdade por Trás do Brilho</h2>
+          <div className="flex">
+            <div className="border-l-4 border-white mr-4 rounded-sm"></div>
+            <p className="leading-relaxed">
+              No mundo das joias, cada peça tem uma história. O <strong>Orithub</strong> ajuda a garantir que essa história seja legítima. Nossa análise de risco verifica a procedência e o poder aquisitivo do cliente, assegurando transações confiáveis.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

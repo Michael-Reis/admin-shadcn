@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Search, CheckCheck, Unlock } from "lucide-react"; 
+import { Search, CheckCheck, Unlock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -10,7 +10,8 @@ import { Navbar } from "@/components/admin-panel/navbar";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import dynamic from 'next/dynamic';
-
+import CardSkeleton from "@/components/segmentation/card/card-skeleton";
+import CardPerson from "@/components/segmentation/card/card-person";
 const Comentario = dynamic(() => import('./comentario/page'));
 const Compra = dynamic(() => import('./compra/page'));
 const Venda = dynamic(() => import('./vendas/page'));
@@ -40,6 +41,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     { id: '8', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
     { id: '9', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
     { id: '10', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '11', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '12', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '13', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '14', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '15', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '16', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '17', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '18', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '19', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '20', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
+    { id: '21', client: 'Pedro Oliveira', evaluator: 'Roberto Lopes', time: '16:40', approved: true },
   ];
 
   useEffect(() => {
@@ -89,14 +101,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex flex-col gap-2">
               {isLoading ? (
                 <>
-                  {cardSkeleton}
-                  {cardSkeleton}
-                  {cardSkeleton}
-                  {cardSkeleton}
-                  {cardSkeleton}
+                  {Array.from({ length: 50 }).map((_, index) => (
+                    <CardSkeleton key={index} />
+                  ))}
                 </>
               ) : (
                 <>
+
                   {filteredCards.length > 0 ? (
                     filteredCards.map((card) => (
                       <Card
@@ -191,10 +202,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           )}
         </main>
 
+
+
+
+        
+
       </Card>
 
-      <Card className="col-span-3 hidden sm:hidden lg:block rounded-none">
-        content cliente
+      <Card className="col-span-3 sm:hidden lg:flex rounded-none items-center pt-5 flex-col">
+        <Avatar className="w-24 h-24">
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback className="text-4xl">CN</AvatarFallback>
+        </Avatar>
+        <div className="mt-2">
+          <h1>Michael Reis</h1>
+          <p>Última vísita: </p>
+        </div>
+
+        {/* content cliente */}
       </Card>
     </div>
   );
